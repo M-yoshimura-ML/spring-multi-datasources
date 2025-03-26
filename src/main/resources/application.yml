@@ -52,5 +52,5 @@ logging.level.liquibase: DEBUG
 spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 jwt.secret: SuperSecretKeyForJWTGeneration12345
-jwt.access-token-expiration: 900000 # 15 minutes in ms
-jwt.refresh-token-expiration: 604800000 # 7 days in ms
+jwt.accessTokenExpiration: 900000 # 15 minutes in ms
+jwt.refreshTokenExpiration: 604800000 # 7 days in ms
