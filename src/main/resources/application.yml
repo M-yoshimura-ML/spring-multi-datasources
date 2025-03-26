@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    jp:
+      url: jdbc:mysql://${DB_HOST_JP}:${DB_PORT_JP}/${DB_SCHEMA_JP}
+      username: ${DB_USER_JP}
+      password: ${DB_PASS_JP}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-type: org.apache.tomcat.jdbc.pool.DataSource
+    us:
+      url: jdbc:mysql://${DB_HOST_US}:${DB_PORT_US}/${DB_SCHEMA_US}
+      username: ${DB_USER_US}
+      password: ${DB_PASS_US}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-type: org.apache.tomcat.jdbc.pool.DataSource
+    global:
+      url: jdbc:mysql://${DB_HOST_GLOBAL}:${DB_PORT_GLOBAL}/${DB_SCHEMA_GLOBAL}
+      username: ${DB_USER_GLOBAL}
+      password: ${DB_PASS_GLOBAL}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-type: org.apache.tomcat.jdbc.pool.DataSource
+  liquibase:
+    enabled: false
+custom:
+  liquibase:
+    jp:
+      enabled: true
+      change-log: classpath:/liquibase/regional/db/changelog/db.changelog-master-jp.xml
+      datasource: jp
+    us:
+      enabled: true
+      change-log: classpath:/liquibase/regional/db/changelog/db.changelog-master-us.xml
+      datasource: us
+    global:
+      enabled: true
+      change-log: classpath:/liquibase/global/db/changelog/db.changelog-master-global.xml
+      datasource: global
+
+
+#spring.jpa.hibernate.ddl-auto: update
+#spring.datasource.hikari.minimum-idle: 20
+#spring.datasource.hikari.maximum-pool-size: 100
+#spring.datasource.hikari.connection-timeout: 30000
+#spring.datasource.hikari.transaction-isolation: TRANSACTION_READ_COMMITTED
+
+liquibase.secureParsing: false
+logging.level.liquibase: DEBUG
+spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration

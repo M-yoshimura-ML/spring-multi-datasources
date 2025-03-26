@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   logicalFilePath="path-independent"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.29.xsd">
+    <changeSet id="jp-test-data-1" author="masa">
+                <preConditions>
+                    <sqlCheck expectedResult="0">SELECT count(*) FROM test;</sqlCheck>
+                </preConditions>
+        <insert tableName="global_test">
+            <column name="test_id" value="1"/>
+            <column name="test_column" value="Global"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
