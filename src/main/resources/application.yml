@@ -1,4 +1,9 @@
 spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
   datasource:
     jp:
       url: jdbc:mysql://${DB_HOST_JP}:${DB_PORT_JP}/${DB_SCHEMA_JP}
