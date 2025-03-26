@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/platform")
+@RequestMapping("/platform/test")
 public class PlatformTestController {
     @Autowired
     private PlatformTestService platformTestService;
