@@ -12,7 +12,8 @@ import java.io.IOException;
 public class RegionalInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
-        String region = request.getParameter("region");
+        //String region = request.getParameter("region");
+        String region = request.getHeader("region");
         System.out.println("region: " + region);
 
         if (region != null && !isValidRegion(region)) {
