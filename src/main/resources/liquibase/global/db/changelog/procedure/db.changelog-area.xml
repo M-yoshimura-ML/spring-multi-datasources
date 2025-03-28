@@ -5,10 +5,11 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.29.xsd">
 
-    <include file="db.changelog-1.0.xml" relativeToChangelogFile="true"/>
+    <changeSet author="masa" id="sp-area-1">
+        <createProcedure encoding="UTF-8"
+                         procedureName="get_area_by_super_id"
+                         path="liquibase/global/db/changelog/procedure/sql/get_area_by_super_id.sql"
+                         replaceIfExists="true"/>
+    </changeSet>
 
-    <include file="data/01_insert_global_test.xml" relativeToChangelogFile="true" />
-
-    <!-- Stored Procedure -->
-    <include file="procedure/db.changelog-area.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
