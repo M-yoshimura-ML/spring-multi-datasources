@@ -42,4 +42,35 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="1-3" author="masa">
+        <createTable tableName="area">
+            <column name="id" type="bigint(20)">
+                <constraints primaryKey="true" primaryKeyName="areaPK" nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_at" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_at" type="datetime"/>
+            <column defaultValue="SYSTEM" name="modified_by" type="VARCHAR(255)"/>
+            <column name="version" type="bigint(20)" defaultValue="1"/>
+            <column name="code" type="varchar(50)"/>
+            <column name="name_ch" type="varchar(50)"/>
+            <column name="name_hk" type="varchar(50)"/>
+            <column name="name_jp" type="varchar(50)"/>
+            <column name="name_us" type="varchar(50)"/>
+            <column name="super_id" type="bigint(20)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1-4" author="masa">
+        <createIndex indexName="idx_area_super_id" tableName="area">
+            <column name="super_id"/>
+        </createIndex>
+    </changeSet>
 </databaseChangeLog>

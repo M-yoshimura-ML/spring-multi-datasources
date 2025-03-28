@@ -6,7 +6,7 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.29.xsd">
     <changeSet id="jp-test-data-1" author="masa">
                 <preConditions>
-                    <sqlCheck expectedResult="0">SELECT count(*) FROM test;</sqlCheck>
+                    <sqlCheck expectedResult="0">SELECT count(*) FROM global_test;</sqlCheck>
                 </preConditions>
         <insert tableName="global_test">
             <column name="test_id" value="1"/>
